@@ -27,14 +27,14 @@
               <h2 class="title title--small sheet__title">Выберите тесто</h2>
               <div class="sheet__content dough">
                 <label
-                  v-for="dough_type in dough"
+                  v-for="dough_type in getDoughType"
                   :key="dough_type.name"
                   :class="`dough__input dough__input--${dough_type.type}`"
                 >
                   <input
                     type="radio"
                     name="dought"
-                    :value="dough.type"
+                    :value="getDoughType.type"
                     class="visually-hidden"
                     checked
                   />
@@ -49,14 +49,14 @@
               <h2 class="title title--small sheet__title">Выберите размер</h2>
               <div class="sheet__content diameter">
                 <label
-                  v-for="size in sizes"
+                  v-for="size in getSizes"
                   :key="size.name"
                   :class="`diameter__input diameter__input--${size.type}`"
                 >
                   <input
                     type="radio"
                     name="diameter"
-                    :value="sizes.type"
+                    :value="getSizes.type"
                     class="visually-hidden"
                   />
                   <span>{{ size.name }}</span>
@@ -73,14 +73,14 @@
                 <div class="ingridients__sauce">
                   <p>Основной соус:</p>
                   <label
-                    v-for="sauce in sauces"
+                    v-for="sauce in getSauces"
                     :key="sauce.name"
                     class="radio ingridients__input"
                   >
                     <input
                       type="radio"
                       name="sauce"
-                      :value="sauce.type"
+                      :value="getSauces.type"
                       checked
                     />
                     <span>{{ sauce.name }}</span>
@@ -91,7 +91,7 @@
                   <p>Начинка:</p>
                   <ul class="ingridients__list">
                     <li
-                      v-for="ingredient in ingredients"
+                      v-for="ingredient in getIngredients"
                       :key="ingredient.name"
                       class="ingridients__item"
                     >
@@ -175,13 +175,23 @@ export default {
     return {
       misc,
       user,
-      dough: pizza.dough.map((dough_type) => normalizeDoughType(dough_type)),
-      sizes: pizza.sizes.map((size) => normalizeSizeType(size)),
-      sauces: pizza.sauces.map((sauce) => normalizeSauceType(sauce)),
-      ingredients: pizza.ingredients.map((ingredient) =>
-        normalizeIngredientsType(ingredient)
-      ),
     };
+  },
+  computed: {
+    getDoughType() {
+      return pizza.dough.map((dough_type) => normalizeDoughType(dough_type));
+    },
+    getSizes() {
+      return pizza.sizes.map((size) => normalizeSizeType(size));
+    },
+    getSauces() {
+      return pizza.sauces.map((sauce) => normalizeSauceType(sauce));
+    },
+    getIngredients() {
+      return pizza.ingredients.map((ingredient) =>
+        normalizeIngredientsType(ingredient)
+      );
+    },
   },
 };
 </script>
