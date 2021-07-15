@@ -159,9 +159,9 @@
   </div>
 </template>
 <script>
-import pizza from "@/static/pizza.json";
-import misc from "@/static/misc.json";
-import user from "@/static/user.json";
+import pizza from "../static/pizza.json";
+import misc from "../static/misc.json";
+import user from "../static/user.json";
 import {
   normalizeDoughType,
   normalizeIngredientsType,

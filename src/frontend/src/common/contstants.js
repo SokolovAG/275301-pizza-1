@@ -1,84 +1,22 @@
-export const DOUGH_TYPE = [
-  {
-    label: "Тонкое",
-    value: "light",
-  },
-  {
-    label: "Толстое",
-    value: "large",
-  },
-];
+export const DOUGH_TYPE_MAP = new Map();
+DOUGH_TYPE_MAP.set("Тонкое", "light").set("Тонкое", "light");
 
-export const INGREDIENTS = [
-  {
-    label: "Грибы",
-    value: "mushrooms",
-  },
-  {
-    label: "Чеддер",
-    value: "cheddar",
-  },
-  {
-    label: "Салями",
-    value: "salami",
-  },
-  {
-    label: "Ветчина",
-    value: "ham",
-  },
-  {
-    label: "Ананас",
-    value: "ananas",
-  },
-  {
-    label: "Бекон",
-    value: "bacon",
-  },
-  {
-    label: "Лук",
-    value: "onion",
-  },
-  {
-    label: "Чили",
-    value: "chile",
-  },
-  {
-    label: "Халапеньо",
-    value: "jalapeno",
-  },
-  {
-    label: "Маслины",
-    value: "olives",
-  },
-  {
-    label: "Томаты",
-    value: "tomatoes",
-  },
-  {
-    label: "Лосось",
-    value: "salmon",
-  },
-  {
-    label: "Моцарелла",
-    value: "mozzarella",
-  },
-  {
-    label: "Пармезан",
-    value: "parmesan",
-  },
-  {
-    label: "Блю чиз",
-    value: "blue_cheese",
-  },
-];
+export const SAUCE_MAP = new Map();
+SAUCE_MAP.set("Томатный", "tomato").set("Сливочный", "creamy");
 
-export const SAUCE = [
-  {
-    label: "Томатный",
-    value: "tomato",
-  },
-  {
-    label: "Сливочный",
-    value: "creamy",
-  },
-];
+export const INGREDIENTS_MAP = new Map();
+INGREDIENTS_MAP.set("Грибы", "mushrooms")
+  .set("Чеддер", "cheddar")
+  .set("Салями", "salami")
+  .set("Ветчина", "ham")
+  .set("Ананас", "ananas")
+  .set("Бекон", "bacon")
+  .set("Лук", "onion")
+  .set("Чили", "chile")
+  .set("Халапеньо", "jalapeno")
+  .set("Маслины", "olives")
+  .set("Томаты", "tomatoes")
+  .set("Лосось", "salmon")
+  .set("Моцарелла", "mozzarella")
+  .set("Пармезан", "parmesan")
+  .set("Блю чиз", "blue_cheese");
